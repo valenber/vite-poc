@@ -3,10 +3,11 @@
 ## Building
 - [x] react-ts vite
 - [ ] dist for old browsers
+- [ ] i18n management
 
 ## QA
 - [x] eslint
-- [x] vites + jsdom
+- [x] vitest + jsdom
 - [ ] msw
 - [ ] storybook + loki
 
