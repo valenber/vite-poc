@@ -8,7 +8,7 @@
 ## QA
 - [x] eslint
 - [x] vitest + jsdom
-- [ ] msw
+- [x] msw
 - [ ] storybook + loki
 
 ## API

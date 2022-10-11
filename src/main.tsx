@@ -1,10 +1,18 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
+import { StrictMode } from "react";
+import ReactDOM from "react-dom/client";
 
-import { App } from './App'
+import { App } from "./App";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+(async () => {
+  if (process.env.NODE_ENV === "development") {
+    const { worker } = await import("./mocks/browser");
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    worker.start();
+  }
+})();
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
     <App />
   </StrictMode>
-)
+);
