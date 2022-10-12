@@ -1,10 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { rest } from "msw";
 
-interface User {
-  id: string;
-  name: string;
-}
+import { User } from "../App";
 
 const mockUsers: User[] = [
   { id: "1", name: "Bob" },
