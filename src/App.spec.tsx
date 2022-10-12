@@ -1,6 +1,6 @@
+import { config } from "@config";
 import { rest } from "msw";
 
-import { config } from "../config";
 import { render, screen, waitFor } from "../tests/utils";
 import { App } from "./App";
 import { server } from "./mocks/server";

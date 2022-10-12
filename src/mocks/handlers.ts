@@ -1,7 +1,7 @@
+import { config } from "@config";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { rest } from "msw";
 
-import { config } from '../../config'
 import { User } from "../App";
 
 const mockUsers: User[] = [

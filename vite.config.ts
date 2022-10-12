@@ -2,6 +2,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import react from "@vitejs/plugin-react";
+import path from "path";
 import { defineConfig } from "vite";
 import eslint from "vite-plugin-eslint";
 
@@ -13,5 +14,10 @@ export default defineConfig({
   },
   preview: {
     port: 8081,
+  },
+  resolve: {
+    alias: {
+      "@config": path.resolve(__dirname, './config'),
+    },
   },
 });
