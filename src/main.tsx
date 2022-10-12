@@ -3,16 +3,26 @@ import ReactDOM from "react-dom/client";
 
 import { App } from "./App";
 
-(async () => {
-  if (process.env.NODE_ENV === "development") {
-    const { worker } = await import("./mocks/browser");
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    worker.start();
-  }
-})();
+function renderApp() {
+  ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+}
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+if (process.env.NODE_ENV === "development") {
+  const { worker } = await import("./mocks/browser");
+
+  worker
+    .start()
+    .then(() => {
+      renderApp();
+    })
+    .catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error("Failed to start MSW worker", { err });
+    });
+} else {
+  renderApp();
+}

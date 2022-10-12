@@ -11,7 +11,5 @@ module.exports = {
       typescript: {},
     },
   },
-  rules: {
-    "@typescript-eslint/no-floating-promises": ["warn", { ignoreIIFE: true }],
-  },
+  rules: {},
 };
