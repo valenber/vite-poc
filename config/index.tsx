@@ -1,18 +1,42 @@
-const appEnv = process.env.NODE_ENV;
+type Environment = undefined | "test" | "development" | "production";
 
 export interface AppConfig {
-  appEnv: string | undefined;
-  baseURL: string;
+  appEnv: Environment;
+  apiURL: string;
 }
 
-export const base: AppConfig = {
+const appEnv: AppConfig["appEnv"] = process.env.NODE_ENV as Environment;
+
+const base: AppConfig = {
   appEnv,
-  baseURL: appEnv === "test" ? "https://mock.api:8080" : "",
+  apiURL: "",
 };
 
-if (appEnv === "development") {
+const production: AppConfig = {
+  ...base,
+};
+
+const development: AppConfig = {
+  ...base,
+};
+
+const test: AppConfig = {
+  ...base,
+  apiURL: "https://app.com:8080/api",
+};
+
+const configsMap: Map<Environment, AppConfig> = new Map([
+  [undefined, base],
+  ["test", test],
+  ["development", development],
+  ["production", production],
+]);
+
+const config: AppConfig = configsMap.get(appEnv) ?? base;
+
+if (appEnv === "development" || !configsMap.has(appEnv)) {
   // eslint-disable-next-line no-console
-  console.log(base);
+  console.warn(config);
 }
 
-export { base as config };
+export { config };

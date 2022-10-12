@@ -13,7 +13,7 @@ test("displays loading message", () => {
 
 test("displays users list when fetched", async () => {
   server.use(
-    rest.get(`${config.baseURL}/users`, (_req, res, ctx) => {
+    rest.get(`${config.apiURL}/users`, (_req, res, ctx) => {
       return res(
         ctx.status(200),
         ctx.json([

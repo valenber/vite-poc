@@ -11,7 +11,7 @@ export const App = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    fetch(`${config.baseURL}/users`)
+    fetch(`${config.apiURL}/users`)
       .then(async (res) => {
         const fetchedUsers = await res.json();
         setUsers(fetchedUsers as User[])

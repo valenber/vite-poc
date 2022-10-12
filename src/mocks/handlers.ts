@@ -12,13 +12,13 @@ const mockUsers: User[] = [
 sessionStorage.setItem("users", JSON.stringify(mockUsers));
 
 export const handlers = [
-  rest.get(`${config.baseURL}/users`, (_req, res, ctx) => {
+  rest.get(`${config.apiURL}/users`, (_req, res, ctx) => {
     const storedUsers = sessionStorage.getItem("users");
 
     return res(ctx.status(200), ctx.json(JSON.parse(storedUsers!)));
   }),
 
-  rest.post<User>(`${config.baseURL}/users`, (req, res, ctx) => {
+  rest.post<User>(`${config.apiURL}/users`, (req, res, ctx) => {
     const storedUsers = sessionStorage.getItem("users");
     const updatedUsers: User[] = [JSON.parse(storedUsers!), req.json()];
 
