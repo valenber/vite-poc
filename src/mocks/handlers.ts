@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { rest } from "msw";
 
+import { config } from '../../config'
 import { User } from "../App";
 
 const mockUsers: User[] = [
@@ -11,13 +12,13 @@ const mockUsers: User[] = [
 sessionStorage.setItem("users", JSON.stringify(mockUsers));
 
 export const handlers = [
-  rest.get("/users", (_req, res, ctx) => {
+  rest.get(`${config.baseURL}/users`, (_req, res, ctx) => {
     const storedUsers = sessionStorage.getItem("users");
 
     return res(ctx.status(200), ctx.json(JSON.parse(storedUsers!)));
   }),
 
-  rest.post<User>("/users", (req, res, ctx) => {
+  rest.post<User>(`${config.baseURL}/users`, (req, res, ctx) => {
     const storedUsers = sessionStorage.getItem("users");
     const updatedUsers: User[] = [JSON.parse(storedUsers!), req.json()];
 

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { config } from "../config";
+
 export interface User {
   id: string;
   name: string;
@@ -9,7 +11,7 @@ export const App = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    fetch("/users")
+    fetch(`${config.baseURL}/users`)
       .then(async (res) => {
         const fetchedUsers = await res.json();
         setUsers(fetchedUsers as User[])
@@ -24,6 +26,8 @@ export const App = () => {
     <div>
       <h1>Vite - PoC</h1>
       <ul>
+        {!users.length && <h3>Please hold...</h3>}
+
         {users.map(({ id, name }) => {
           return <li key={id}>{name}</li>;
         })}
