@@ -15,7 +15,7 @@ TODO: It can also be integrated with Storybook to render states that depend on r
 - [x] eslint
 - [x] vitest + jsdom
 - [x] msw
-- [ ] storybook + loki
+- [ ] storybook + visual regression solution (e.g. loki)
 
 ## API
 - [ ] redux-toolkit query
@@ -30,6 +30,9 @@ TODO: It can also be integrated with Storybook to render states that depend on r
 - [ ] renovate bot
 
 ## Documentation
+- mocking for local development
 - [ ] testing patterns
+  - how to update mocks in tests
+  - you need to wait for data that is being fetched (waitFor method)
 - [ ] project structure
 - [ ] events reporting
