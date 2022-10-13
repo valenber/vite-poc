@@ -27,7 +27,8 @@ TODO: It can also be integrated with Storybook to render states that depend on r
 - [ ] pixel
 
 ## Dependencies
-- [ ] renovate bot
+We pin all out dependencies to a specific version and have renovate bot to notify us about the updates
+- [x] renovate bot
 
 ## Documentation
 - mocking for local development
