@@ -2,7 +2,7 @@
 import "@testing-library/jest-dom";
 
 import matchers from "@testing-library/jest-dom/matchers";
-import { fetch } from "cross-fetch";
+import fetch from "isomorphic-fetch";
 import { expect } from "vitest";
 
 import { server } from "../src/mocks/server";

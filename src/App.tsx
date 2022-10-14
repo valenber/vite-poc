@@ -1,37 +1,27 @@
-import { useEffect, useState } from "react";
-
-import { config } from "../config";
-
-export interface User {
-  id: string;
-  name: string;
-}
+import { userAPI } from "./services/api";
 
 export const App = () => {
-  const [users, setUsers] = useState<User[]>([]);
-
-  useEffect(() => {
-    fetch(`${config.apiURL}/users`)
-      .then(async (res) => {
-        const fetchedUsers = await res.json();
-        setUsers(fetchedUsers as User[])
-      })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.error("Failed to fetch users", { err });
-      });
-  }, []);
+  const {
+    isLoading,
+    isSuccess,
+    data: users,
+    isError,
+    error,
+  } = userAPI.useGetAllUsersQuery();
 
   return (
-    <div>
+    <>
       <h1>Vite - PoC</h1>
-      <ul>
-        {!users.length && <h3>Please hold...</h3>}
+      {isLoading && <h3>Please hold...</h3>}
 
-        {users.map(({ id, name }) => {
-          return <li key={id}>{name}</li>;
-        })}
+      {isError && <pre>{JSON.stringify(error, null, 2)}</pre>}
+      <ul>
+
+        {isSuccess &&
+          users.map(({ id, name }) => {
+            return <li key={id}>{name}</li>;
+          })}
       </ul>
-    </div>
+    </>
   );
 };

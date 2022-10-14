@@ -12,21 +12,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "1.8.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-redux": "8.0.4"
   },
   "devDependencies": {
     "@cabify/eslint-config": "1.1.1",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
+    "@types/isomorphic-fetch": "0.0.36",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "5.39.0",
     "@typescript-eslint/parser": "5.39.0",
     "@vitejs/plugin-react": "2.1.0",
-    "cross-fetch": "3.1.5",
     "eslint": "8.25.0",
     "eslint-import-resolver-typescript": "3.5.1",
+    "isomorphic-fetch": "3.0.0",
     "jsdom": "20.0.1",
     "msw": "0.47.4",
     "prettier": "2.7.1",

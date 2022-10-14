@@ -21,10 +21,10 @@ For local development and tests we mock API calls using [msw library](https://ms
 TODO: It can also be integrated with Storybook to render states that depend on remote data. Storybook 7 works with vite
 
 - [ ] storybook + visual regression solution (e.g. loki)
+- [ ] husky pre-commit hooks
 
 ## Data fetching and caching
-
-- [ ] RTK query
+We fetch and cache data using [RTK query](https://redux-toolkit.js.org/rtk-query/overview). It is a sub-library of Redux Toolkit and it can be seamlessly integrated with redux store if the app grows in complexity.
 
 ## App i18n
 
