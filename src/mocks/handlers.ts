@@ -10,19 +10,28 @@ const mockUsers: User[] = [
 
 sessionStorage.setItem("users", JSON.stringify(mockUsers));
 
+function getUsers(): User[] {
+  return JSON.parse(sessionStorage.getItem("users") ?? '[]');
+}
+
 export const handlers = [
   rest.get(`${config.apiURL}/users`, (_req, res, ctx) => {
-    const storedUsers = sessionStorage.getItem("users");
+    const storedUsers = getUsers();
 
-    return res(ctx.status(200), ctx.json(JSON.parse(storedUsers!)));
+    return res(ctx.status(200), ctx.json(storedUsers));
   }),
 
-  rest.post<User>(`${config.apiURL}/users`, (req, res, ctx) => {
-    const storedUsers = sessionStorage.getItem("users");
-    const updatedUsers: User[] = [JSON.parse(storedUsers!), req.json()];
+  rest.post<Omit<User, 'id'>>(`${config.apiURL}/users`, async (req, res, ctx) => {
+    const storedUsers = getUsers();
+    const payload = await req.json();
+    const nextId = String(storedUsers.length + 1);
+
+    const newUser: User = { id: nextId, ...payload };
+
+    const updatedUsers: User[] = [...storedUsers, newUser];
 
     sessionStorage.setItem("users", JSON.stringify(updatedUsers));
 
-    return res(ctx.status(200), ctx.json(req.json()));
+    return res(ctx.status(200), ctx.json(newUser));
   }),
 ];
