@@ -1,4 +1,4 @@
-import { userAPI } from "./services/api";
+import { userAPI } from "@api";
 
 export const App = () => {
   const {

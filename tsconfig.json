@@ -17,7 +17,9 @@
     "jsx": "react-jsx",
     "types": ["vitest/globals"],
     "paths": {
-      "@config": ["./config"]
+      "@config": ["./config"],
+      "@api": ["./src/services/api/index.ts"],
+      "@apiEntities": ["./src/services/api/entities.ts"]
     }
   },
   "include": ["src", "./tests/setup.ts"],
