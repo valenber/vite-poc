@@ -2,9 +2,7 @@
 
 ## Build
 
-The app builds using [Vite](https://vitejs.dev/).
-
-- [ ] dist for old browsers
+The app builds using [Vite](https://vitejs.dev/). The basic configuration includes support for legacy browsers. If your app is not expected to run on older browsers you can reduce the bundle size by disabling `legacy plugin` in [vite.config.ts](./vite.config.ts).
 
 ## QA
 
@@ -24,6 +22,7 @@ TODO: It can also be integrated with Storybook to render states that depend on r
 - [ ] husky pre-commit hooks
 
 ## Data fetching and caching
+
 We fetch and cache data using [RTK query](https://redux-toolkit.js.org/rtk-query/overview). It is a sub-library of Redux Toolkit and it can be seamlessly integrated with redux store if the app grows in complexity.
 
 ## App i18n
@@ -42,7 +41,7 @@ We fetch and cache data using [RTK query](https://redux-toolkit.js.org/rtk-query
 
 We pin all out dependencies to a specific version and have renovate bot to notify us about the updates
 
-## Docs ToDO
+## Guidelines
 
 - explain mocking for local development
 - testing patterns
