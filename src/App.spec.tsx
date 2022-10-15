@@ -1,7 +1,7 @@
 import { config } from "@config";
 import { rest } from "msw";
 
-import { render, screen, waitFor } from "../tests/utils";
+import { render, screen, userEvent, waitFor } from "../tests/utils";
 import { App } from "./App";
 import { server } from "./mocks/server";
 
@@ -28,4 +28,19 @@ test("displays users list when fetched", async () => {
   await waitFor(() => expect(screen.getByText("Jack")).toBeVisible());
 
   await waitFor(() => expect(screen.getByText("Jill")).toBeVisible());
+});
+
+test("newly created user is displayed in the list", async () => {
+  const user = userEvent.setup();
+  render(<App />);
+
+  await waitFor(() => expect(screen.getByText("Bob")).toBeVisible());
+  await waitFor(() =>
+    expect(screen.queryByText("Gary")).not.toBeInTheDocument()
+  );
+
+  await user.type(screen.getByLabelText("User name:"), "Gary");
+  await user.click(screen.getByText("Save user"));
+
+  await waitFor(() => expect(screen.getByText("Gary")).toBeVisible());
 });

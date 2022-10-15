@@ -30,12 +30,18 @@ export const App = () => {
     <>
       <form onSubmit={sendCreateUserRequest}>
         <legend>New user</legend>
-        <input
-          name="name"
-          onChange={handleInputChange}
-          type="text"
-          value={newName}
-        />
+        <br />
+
+        <label htmlFor="user_name">
+          User name:
+          <input
+            id="user_name"
+            name="name"
+            onChange={handleInputChange}
+            type="text"
+            value={newName}
+          />
+        </label>
 
         <input type="submit" value="Save user" />
       </form>
