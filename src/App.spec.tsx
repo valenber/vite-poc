@@ -1,7 +1,7 @@
 import { config } from "@config";
+import { render, screen, userEvent, waitFor } from "@tests-utils";
 import { rest } from "msw";
 
-import { render, screen, userEvent, waitFor } from "../tests/utils";
 import { App } from "./App";
 import { server } from "./mocks/server";
 

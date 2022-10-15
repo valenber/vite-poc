@@ -21,6 +21,7 @@ export default defineConfig({
       "@config": path.resolve(__dirname, "./config"),
       "@api": path.resolve(__dirname, "./src/services/api/index.ts"),
       "@apiEntities": path.resolve(__dirname, "./src/services/api/entities.ts"),
+      "@tests-utils": path.resolve(__dirname, "./tests/utils.tsx"),
     },
   },
 });
