@@ -18,10 +18,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@config": path.resolve(__dirname, "./config"),
+      "@api": path.resolve(__dirname, "./src/services/api"),
       "@common": path.resolve(__dirname, "./src/common/"),
-      "@api": path.resolve(__dirname, "./src/services/api/index.ts"),
-      "@apiEntities": path.resolve(__dirname, "./src/services/api/entities.ts"),
+      "@config": path.resolve(__dirname, "./config"),
       "@tests-utils": path.resolve(__dirname, "./tests/utils.tsx"),
     },
   },

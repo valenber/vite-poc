@@ -1,4 +1,4 @@
-import { userAPI } from "@api";
+import { userAPI } from "@api/userAPI";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useErrorHandler } from "react-error-boundary";
 

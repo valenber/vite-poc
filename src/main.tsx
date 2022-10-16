@@ -1,4 +1,4 @@
-import { userAPI } from "@api";
+import { userAPI } from "@api/userAPI";
 import { AppErrorBoundary } from "@common/components/AppErrorBoundary";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { StrictMode } from "react";

@@ -1,4 +1,4 @@
-import { User } from "@apiEntities";
+import { User } from "@api/entities";
 import { config } from "@config";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { rest } from "msw";

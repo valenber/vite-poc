@@ -1,4 +1,4 @@
-import { userAPI } from "@api";
+import { userAPI } from "@api/userAPI";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { render, RenderOptions } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";

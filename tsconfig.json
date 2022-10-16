@@ -17,10 +17,9 @@
     "jsx": "react-jsx",
     "types": ["vitest/globals"],
     "paths": {
-      "@config": ["./config"],
-      "@api": ["./src/services/api/index.ts"],
+      "@api/*": ["./src/services/api/*"],
       "@common/*": ["./src/common/*"],
-      "@apiEntities": ["./src/services/api/entities.ts"],
+      "@config": ["./config"],
       "@tests-utils": ["./tests/utils.tsx"]
     }
   },

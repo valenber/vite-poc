@@ -1,6 +1,7 @@
-import { User } from "@apiEntities";
 import { config } from "@config";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+import { User } from "./entities";
 
 export const userAPI = createApi({
   reducerPath: "userAPI",
