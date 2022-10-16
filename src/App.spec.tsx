@@ -1,5 +1,5 @@
 import { config } from "@config";
-import { render, screen, userEvent, waitFor } from "@tests-utils";
+import { render, screen, userEvent, waitFor} from "@tests/utils";
 import { rest } from "msw";
 
 import { App } from "./App";

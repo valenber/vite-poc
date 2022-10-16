@@ -21,7 +21,7 @@ export default defineConfig({
       "@api": path.resolve(__dirname, "./src/services/api"),
       "@common": path.resolve(__dirname, "./src/common/"),
       "@config": path.resolve(__dirname, "./config"),
-      "@tests-utils": path.resolve(__dirname, "./tests/utils.tsx"),
+      "@tests/utils": path.resolve(__dirname, "./tests/utils.tsx"),
     },
   },
 });

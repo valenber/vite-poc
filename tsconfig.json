@@ -20,7 +20,7 @@
       "@api/*": ["./src/services/api/*"],
       "@common/*": ["./src/common/*"],
       "@config": ["./config"],
-      "@tests-utils": ["./tests/utils.tsx"]
+      "@tests/utils": ["./tests/utils.tsx"]
     }
   },
   "include": ["src", "./tests/setup.ts"],
