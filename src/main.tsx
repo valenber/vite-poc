@@ -4,13 +4,16 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 
 import { App } from "./App";
+import { AppErrorBoundary } from "./common/components/AppErrorBoundary";
 
 function renderApp() {
   ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <StrictMode>
-      <ApiProvider api={userAPI}>
-        <App />
-      </ApiProvider>
+      <AppErrorBoundary>
+        <ApiProvider api={userAPI}>
+          <App />
+        </ApiProvider>
+      </AppErrorBoundary>
     </StrictMode>
   );
 }
