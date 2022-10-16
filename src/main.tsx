@@ -1,10 +1,10 @@
 import { userAPI } from "@api";
+import { AppErrorBoundary } from "@common/components/AppErrorBoundary";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 
 import { App } from "./App";
-import { AppErrorBoundary } from "./common/components/AppErrorBoundary";
 
 function renderApp() {
   ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

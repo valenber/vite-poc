@@ -19,6 +19,7 @@
     "paths": {
       "@config": ["./config"],
       "@api": ["./src/services/api/index.ts"],
+      "@common/*": ["./src/common/*"],
       "@apiEntities": ["./src/services/api/entities.ts"],
       "@tests-utils": ["./tests/utils.tsx"]
     }
