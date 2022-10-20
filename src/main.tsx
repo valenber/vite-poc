@@ -7,8 +7,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // import { App } from "./App";
 import { AppLayout } from "./layout";
+import { ErrorPage } from "./layout/ErrorPage";
 
-const router = createBrowserRouter([{ path: "/", element: <AppLayout /> }]);
+const router = createBrowserRouter([
+  { path: "/", element: <AppLayout />, errorElement: <ErrorPage /> },
+]);
 
 function renderApp() {
   ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

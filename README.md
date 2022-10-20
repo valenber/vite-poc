@@ -65,7 +65,8 @@ More error boundaries can be added at different levels of the app to limit the e
 
 ## Routing
 
-- TODO
+- AppLayout to handle navigation. It wrapps around the entre app at the root path
+- routing error component is rendered when user navigates to undefined path
 
 ## Dependencies management
 
