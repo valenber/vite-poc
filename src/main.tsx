@@ -3,15 +3,19 @@ import { AppErrorBoundary } from "@common/components/AppErrorBoundary";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { App } from "./App";
+// import { App } from "./App";
+import { AppLayout } from "./layout";
+
+const router = createBrowserRouter([{ path: "/", element: <AppLayout /> }]);
 
 function renderApp() {
   ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <StrictMode>
       <AppErrorBoundary>
         <ApiProvider api={userAPI}>
-          <App />
+          <RouterProvider router={router} />
         </ApiProvider>
       </AppErrorBoundary>
     </StrictMode>

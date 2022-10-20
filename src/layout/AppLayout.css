@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.AppLayout {
+  display: flex;
+  height: 100vh;
+}
+
+.AppLayout nav {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  padding: 16px;
+  width: 240px;
+  flex-shrink: 0;
+}
+.AppLayout section {
+  padding: 16px;
+}
