@@ -1,10 +1,14 @@
-import './AppLayout.css';
+import "./AppLayout.css";
+
+import { Outlet } from "react-router-dom";
 
 export const AppLayout = () => {
   return (
     <div className="AppLayout">
       <nav>[navigation links]</nav>
-      <section>[view content]</section>
+      <section>
+        <Outlet />
+      </section>
     </div>
   );
 };
