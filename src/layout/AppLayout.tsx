@@ -6,8 +6,19 @@ export const AppLayout = () => {
   return (
     <div className="AppLayout">
       <nav>
-        <Link to="app/">App</Link>
+        <li>
+          <Link to="data">Data fetching</Link>
+        </li>
+
+        <li>
+          <Link to="errors">Error Management</Link>
+        </li>
+
+        <li>
+          <Link to="app/broken">Broken link</Link>
+        </li>
       </nav>
+
       <section>
         <Outlet />
       </section>

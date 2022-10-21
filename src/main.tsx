@@ -1,32 +1,11 @@
 import { userAPI } from "@api/userAPI";
-import { AppErrorBoundary } from "@common/components/AppErrorBoundary";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 
-import { App } from "./App";
-import { AppLayout } from "./layout";
-import { RoutingErrorPage } from "./layout/RoutingErrorPage";
+import { router } from "./routes";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <AppLayout />,
-    errorElement: <RoutingErrorPage />,
-    children: [
-      {
-        path: "app",
-        hasErrorBoundary: true,
-        element: (
-          <AppErrorBoundary>
-            <App />
-          </AppErrorBoundary>
-        ),
-      },
-    ],
-  },
-]);
 
 function renderApp() {
   ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

@@ -65,8 +65,11 @@ More error boundaries can be added at different levels of the app to limit the e
 
 ## Routing
 
+The routing is managed with [react-router v6](https://reactrouter.com/en/main). We only use actual routing functionality and navigation errors handling.
+
 - AppLayout to handle navigation. It wrapps around the entre app at the root path
 - routing error component is rendered when user navigates to undefined path
+- custom error boundaries need to be set in the routes object
 
 ## Dependencies management
 

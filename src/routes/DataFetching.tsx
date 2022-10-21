@@ -2,7 +2,7 @@ import { userAPI } from "@api/userAPI";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useErrorHandler } from "react-error-boundary";
 
-export const App = () => {
+export const DataFetching = () => {
   const {
     isLoading,
     isSuccess,
@@ -27,25 +27,6 @@ export const App = () => {
     trigger({ name: newName });
 
     setNewName("");
-  }
-
-  // AppErrorBoundary test for react lifecucle error
-  const [renderFire, setRenderFire] = useState(false);
-
-  const Fire = () => {
-    throw new Error("💥 Lifecycle Fire!!! 💥");
-  };
-
-  function renderFireComponent() {
-    setRenderFire(true);
-  }
-
-  // AppErrorBoundary test for runtime error
-  const errorHandler = useErrorHandler();
-
-  function throwRuntimeError() {
-    const runtimeError = new Error("💥 Runtime Fire!!! 💥");
-    errorHandler(runtimeError);
   }
 
   return (
@@ -78,11 +59,6 @@ export const App = () => {
             return <li key={id}>{name}</li>;
           })}
       </ul>
-
-      <button onClick={renderFireComponent}>Render faulty component</button>
-      {renderFire && <Fire />}
-
-      <button onClick={throwRuntimeError}>Throw runtime error</button>
     </>
   );
 };

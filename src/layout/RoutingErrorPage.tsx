@@ -17,11 +17,11 @@ export const RoutingErrorPage = () => {
   console.error(error);
 
   function navigateToRoot() {
-    window.location.href = "/app";
+    window.location.href = "/data";
   }
 
   return (
-    <div className="ErrorPage">
+    <div className="RoutingErrorPage">
       <h1>Oops!</h1>
       <p>Sorry, this URL does not exist in the app.</p>
       <h3>{`${error.status}: ${error.statusText}` || error.message}</h3>
