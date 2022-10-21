@@ -1,4 +1,4 @@
-import "./ErrorPage.css";
+import "./RoutingErrorPage.css";
 
 import { useRouteError } from "react-router-dom";
 
@@ -10,17 +10,23 @@ interface RoutingError {
   status: number;
 }
 
-export function ErrorPage() {
+export const RoutingErrorPage = () => {
   const error = useRouteError() as RoutingError;
   // TODO: report to monitoring service e.g. Rollbar
   // eslint-disable-next-line no-console
   console.error(error);
+
+  function navigateToRoot() {
+    window.location.href = "/app";
+  }
 
   return (
     <div className="ErrorPage">
       <h1>Oops!</h1>
       <p>Sorry, this URL does not exist in the app.</p>
       <h3>{`${error.status}: ${error.statusText}` || error.message}</h3>
+
+      <button onClick={navigateToRoot}>Go to Home page</button>
     </div>
   );
-}
+};

@@ -7,13 +7,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { App } from "./App";
 import { AppLayout } from "./layout";
-import { ErrorPage } from "./layout/ErrorPage";
+import { RoutingErrorPage } from "./layout/RoutingErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <ErrorPage />,
+    errorElement: <RoutingErrorPage />,
     children: [
       {
         path: "app",
