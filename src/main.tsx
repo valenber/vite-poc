@@ -14,18 +14,26 @@ const router = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     errorElement: <ErrorPage />,
-    children: [{ path: "app", element: <App />, errorElement: <ErrorPage /> }],
+    children: [
+      {
+        path: "app",
+        hasErrorBoundary: true,
+        element: (
+          <AppErrorBoundary>
+            <App />
+          </AppErrorBoundary>
+        ),
+      },
+    ],
   },
 ]);
 
 function renderApp() {
   ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <StrictMode>
-      <AppErrorBoundary>
-        <ApiProvider api={userAPI}>
-          <RouterProvider router={router} />
-        </ApiProvider>
-      </AppErrorBoundary>
+      <ApiProvider api={userAPI}>
+        <RouterProvider router={router} />
+      </ApiProvider>
     </StrictMode>
   );
 }
