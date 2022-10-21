@@ -1,8 +1,8 @@
 import { AppErrorBoundary } from "@common/components/AppErrorBoundary";
+import { AppLayout } from "@common/components/layout/AppLayout";
+import { RoutingErrorPage } from "@common/components/layout/RoutingErrorPage";
 import { createBrowserRouter } from "react-router-dom";
 
-import { AppLayout } from "../layout/AppLayout";
-import { RoutingErrorPage } from "../layout/RoutingErrorPage";
 import { DataFetching } from "./DataFetching";
 import { ErrorManagement } from "./ErrorManagement";
 
@@ -14,7 +14,6 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "data",
-        hasErrorBoundary: true,
         element: (
           // if this boundary is moved inside the component, it fails to catch runtime errors
           <AppErrorBoundary>
