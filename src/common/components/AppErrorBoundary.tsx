@@ -3,6 +3,10 @@ import { FC, PropsWithChildren } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
 const ErrorFallback: FC<{ error: Error }> = ({ error }) => {
+  function reloadPage(){
+    window.location.reload();
+  }
+
   return (
     <div role="alert">
       <p>Something went wrong:</p>
@@ -13,6 +17,8 @@ const ErrorFallback: FC<{ error: Error }> = ({ error }) => {
           <pre>{error.stack ?? JSON.stringify(error, null, 2)}</pre>
         </details>
       )}
+
+      <button onClick={reloadPage}>Reload page</button>
     </div>
   );
 };

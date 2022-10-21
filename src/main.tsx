@@ -1,19 +1,18 @@
 import { userAPI } from "@api/userAPI";
-import { AppErrorBoundary } from "@common/components/AppErrorBoundary";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
 
-import { App } from "./App";
+import { router } from "./routes";
+
 
 function renderApp() {
   ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <StrictMode>
-      <AppErrorBoundary>
-        <ApiProvider api={userAPI}>
-          <App />
-        </ApiProvider>
-      </AppErrorBoundary>
+      <ApiProvider api={userAPI}>
+        <RouterProvider router={router} />
+      </ApiProvider>
     </StrictMode>
   );
 }
