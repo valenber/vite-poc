@@ -2242,6 +2242,11 @@ https-proxy-agent@^5.0.1:
     agent-base "6"
     debug "4"
 
+husky@^8.0.0:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
+  integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==
+
 iconv-lite@0.6.3:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.6.3.tgz#a52f80bf38da1952eb5c681790719871a1a72501"
@@ -2867,6 +2872,11 @@ node-releases@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.6.tgz#8a7088c63a55e493845683ebf3c828d8c51c5503"
   integrity sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==
+
+noop-ts@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/noop-ts/-/noop-ts-1.0.4.tgz#0f9d6fabcb484ce50d30f08020cf7ee993f01698"
+  integrity sha512-+9RN4s4XO+M7HT2el0bINeJZdNLNgSD0h2i1+qmTr/ZEgYjoamkxfffmVY5dIbGrJSuMemfqroDjyLXXFYkp8w==
 
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
