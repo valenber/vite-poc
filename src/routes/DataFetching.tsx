@@ -1,5 +1,5 @@
 import { userAPI } from "@api/userAPI";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { NewUserForm } from "@common/components/NewUserForm";
 import { useErrorHandler } from "react-error-boundary";
 
 export const DataFetching = () => {
@@ -15,44 +15,16 @@ export const DataFetching = () => {
 
   const [trigger] = userAPI.useCreateUserMutation();
 
-  const [newName, setNewName] = useState("");
-
-  function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
-    setNewName(e.target.value);
-  }
-
-  function sendCreateUserRequest(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    trigger({ name: newName });
-
-    setNewName("");
-  }
-
   return (
     <>
-      <form onSubmit={sendCreateUserRequest}>
-        <legend>New user</legend>
-        <br />
-
-        <label htmlFor="user_name">
-          User name:
-          <input
-            id="user_name"
-            name="name"
-            onChange={handleInputChange}
-            type="text"
-            value={newName}
-          />
-        </label>
-
-        <input type="submit" value="Save user" />
-      </form>
+      <NewUserForm submitCallTrigger={trigger} />
 
       <h1>Users list</h1>
+
       {isLoading && <h3>Please hold...</h3>}
 
       {isError && <pre>{JSON.stringify(error, null, 2)}</pre>}
+
       <ul>
         {isSuccess &&
           users.map(({ id, name }) => {

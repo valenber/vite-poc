@@ -18,7 +18,7 @@ For local development and tests we mock API calls using [msw library](https://ms
 
 - [ ] storybook
 - [ ] MSW integration
-- [ ] visual regression testing e.g. loki
+- [ ] visual regression testing e.g. [loki](https://loki.js.org/) or [chromatic](https://www.chromatic.com/pricing).
 
 ### Pre-commit hooks
 

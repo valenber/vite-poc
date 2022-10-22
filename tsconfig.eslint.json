@@ -2,8 +2,8 @@
   "extends": "./tsconfig.json",
   "include": [
     ".eslintrc.cjs",
-    "vite.config.ts",
-    "vitest.config.ts",
+    "vite.config.js",
+    "vitest.config.js",
     "./src/**/*",
     "tests/**/*",
   ]
