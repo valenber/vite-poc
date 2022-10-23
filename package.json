@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "qa": "yarn test:once && yarn typecheck && yarn lint",
     "test": "vitest",
     "test:once": "vitest run",
     "typecheck": "tsc",
