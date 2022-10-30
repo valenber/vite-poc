@@ -16,14 +16,30 @@ For local development and tests we mock API calls using [msw library](https://ms
 
 ### Storybook
 
-- [ ] storybook
+For developing UI components in isolation we ca use Storybook. Create a file next to the component you are testing named `[componntName].stories.tsx` and render the states you want to examine e.g.
+
+```jsx
+import { noop } from "@tests/utils";
+
+import { NewUserForm } from "./NewUserForm";
+
+export default {
+  title: "NewUserForm",
+  component: NewUserForm,
+};
+
+export const Base = () => <NewUserForm submitCallTrigger={noop} />;
+```
+
+#### TODO:
+
 - [ ] MSW integration
 - [ ] visual regression testing e.g. [loki](https://loki.js.org/) or [chromatic](https://www.chromatic.com/pricing).
 
 ### Pre-commit hooks
 
-Before each commit we run our __tests__ to make sure commited code hasn't broken anything.
-Before pushing the code to the repo we run __typecheck__ and __lint__ as an aditional QA check.
+Before each commit we run our **tests** to make sure commited code hasn't broken anything.
+Before pushing the code to the repo we run **typecheck** and **lint** as an aditional QA check.
 To manage this configuration we use [husky](https://typicode.github.io/husky/#/?id=create-a-hook) package.
 
 ## Data fetching and caching
@@ -63,7 +79,7 @@ useErrorHandler(error);
 
 More error boundaries can be added at different levels of the app to limit the effect it has on the user experience. For example if one of the views throw, we may want to allow the user to navigate to another section.
 
-- TODO: add event reporting when the boundary catches.
+- TODO: add error event reporting when the boundary catches (e.g. with rollbar).
 
 ## Routing
 
