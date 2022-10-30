@@ -2,12 +2,18 @@ import "./AppLayout.css";
 
 import { Link, Outlet } from "react-router-dom";
 
+import { AppErrorBoundary } from "../AppErrorBoundary";
+
 export const AppLayout = () => {
   return (
     <div className="AppLayout">
       <nav>
         <li>
           <Link to="data">Data fetching</Link>
+        </li>
+
+        <li>
+          <Link to="users">Users List</Link>
         </li>
 
         <li>
@@ -20,7 +26,9 @@ export const AppLayout = () => {
       </nav>
 
       <section>
-        <Outlet />
+        <AppErrorBoundary>
+          <Outlet />
+        </AppErrorBoundary>
       </section>
     </div>
   );
