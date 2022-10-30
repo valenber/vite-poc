@@ -3,6 +3,7 @@ import { AppLayout } from "@common/components/layout/AppLayout";
 import { RoutingErrorPage } from "@common/components/layout/RoutingErrorPage";
 import { createBrowserRouter } from "react-router-dom";
 
+import { UsersList } from "../features/UsersList";
 import { DataFetching } from "./DataFetching";
 import { ErrorManagement } from "./ErrorManagement";
 
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
             <ErrorManagement />
           </AppErrorBoundary>
         ),
+      },
+      {
+        path: "users",
+        element: <UsersList />,
       },
     ],
   },
