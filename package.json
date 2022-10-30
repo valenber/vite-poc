@@ -13,7 +13,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s public",
     "sb": "yarn storybook",
     "build-storybook": "build-storybook"
   },
@@ -53,6 +53,7 @@
     "isomorphic-fetch": "3.0.0",
     "jsdom": "20.0.1",
     "msw": "0.47.4",
+    "msw-storybook-addon": "1.6.3",
     "noop-ts": "1.0.4",
     "prettier": "2.7.1",
     "terser": "5.15.1",

@@ -2,6 +2,7 @@ import { userAPI } from "@api/userAPI";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { ReactElement } from "react";
 
+import { handlers } from "../../mocks/handlers";
 import { Users } from ".";
 import { UsersListErrorBoundary } from "./components/UsersListErrorBoundary";
 
@@ -19,4 +20,10 @@ export default {
   ],
 };
 
-export const Error = () => <Users />;
+export const Complete = () => <Users />;
+
+Complete.parameters = {
+  msw: {
+    handlers: [...handlers],
+  },
+};
