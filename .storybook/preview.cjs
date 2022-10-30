@@ -1,10 +1,8 @@
-import { initialize, mswDecorator } from 'msw-storybook-addon';
+import { initialize, mswDecorator } from "msw-storybook-addon";
+import { withApiProvider } from "./decorators/withApiProvider";
 
 // Initialize MSW
 initialize();
-
-// Provide the MSW addon decorator globally
-export const decorators = [mswDecorator];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -15,3 +13,8 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [
+  mswDecorator, // makes ServiceWorker globally available
+  withApiProvider, // wraps every story in ApiProvider component
+];

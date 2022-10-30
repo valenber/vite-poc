@@ -1,5 +1,3 @@
-import { userAPI } from "@api/userAPI";
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { ReactElement } from "react";
 
 import { handlers } from "../../mocks/handlers";
@@ -11,11 +9,9 @@ export default {
   component: Users,
   decorators: [
     (Story: () => ReactElement) => (
-      <ApiProvider api={userAPI}>
-        <UsersListErrorBoundary>
-          <Story />
-        </UsersListErrorBoundary>
-      </ApiProvider>
+      <UsersListErrorBoundary>
+        <Story />
+      </UsersListErrorBoundary>
     ),
   ],
 };
