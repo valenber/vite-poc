@@ -100,9 +100,8 @@ More error boundaries can be added at different levels of the app to limit the e
 
 ## Routing
 
-The routing is managed with [react-router v6](https://reactrouter.com/en/main). The package provides it's own error boundary to catch navigation errors, allowing to set a custom fallback view.
+The routing is managed with [react-router](https://reactrouter.com/en/main). The package provides it's own error boundary to catch navigation errors, allowing to set a custom fallback view.
 To handle navigation we use AppLayout component that wrapps around the entre app at the root path. The specific route views are rendered through [Outlet](https://reactrouter.com/en/main/components/outlet) in this component.
-**NOTE**: As of react-router 6.4.2 the custom error boundaries have to be set in the routes object. Otherwise runtime errors fall through to the router's error boundary.
 
 ## Dependencies management
 
