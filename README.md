@@ -53,7 +53,7 @@ Errored.parameters = {
 
 - [ ] visual regression testing e.g. [loki](https://loki.js.org/) or [chromatic](https://www.chromatic.com/pricing).
 
-### Pre-commit hooks
+### Git hooks
 
 Before each commit we run our **tests** to make sure commited code hasn't broken anything.
 Before pushing the code to the repo we run **typecheck** and **lint** as an aditional QA check.
