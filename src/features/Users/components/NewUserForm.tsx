@@ -1,12 +1,10 @@
-import { User } from "@api/entities";
-import { ChangeEvent, FC, FormEvent, useState } from "react";
+import { userAPI } from "@api/userAPI";
+import { ChangeEvent, FormEvent, useState } from "react";
 
-export interface NewUserFormProps {
-  submitCallTrigger: (data: Omit<User, "id">) => Promise<unknown>;
-}
-
-export const NewUserForm: FC<NewUserFormProps> = ({ submitCallTrigger }) => {
+export const NewUserForm = () => {
+  const [triggerMutation] = userAPI.useCreateUserMutation();
   const [newName, setNewName] = useState("");
+
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     setNewName(e.target.value);
@@ -15,7 +13,7 @@ export const NewUserForm: FC<NewUserFormProps> = ({ submitCallTrigger }) => {
   function sendCreateUserRequest(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    submitCallTrigger({ name: newName });
+    triggerMutation({ name: newName });
 
     setNewName("");
   }

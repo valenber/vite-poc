@@ -12,6 +12,7 @@ export const userAPI = createApi({
       query: () => "/users",
       providesTags: [{ type: "users", id: "LIST" }],
     }),
+
     createUser: builder.mutation<User, Omit<User, "id">>({
       query: (user) => ({
         url: '/users',

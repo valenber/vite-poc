@@ -2,11 +2,11 @@ import { config } from "@config";
 import { render, screen, userEvent, waitFor} from "@tests/utils";
 import { rest } from "msw";
 
-import { server } from "../mocks/server";
-import { DataFetching } from "./DataFetching";
+import { server } from "../../mocks/server";
+import { Users } from ".";
 
 test("displays loading message", () => {
-  render(<DataFetching />);
+  render(<Users />);
 
   expect(screen.getByText("Please hold...")).toBeVisible();
 });
@@ -23,7 +23,7 @@ test("displays users list when fetched", async () => {
       );
     })
   );
-  render(<DataFetching />);
+  render(<Users />);
 
   await waitFor(() => expect(screen.getByText("Jack")).toBeVisible());
 
@@ -32,7 +32,7 @@ test("displays users list when fetched", async () => {
 
 test("newly created user is displayed in the list", async () => {
   const user = userEvent.setup();
-  render(<DataFetching />);
+  render(<Users />);
 
   await waitFor(() => expect(screen.getByText("Bob")).toBeVisible());
   await waitFor(() =>

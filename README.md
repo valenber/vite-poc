@@ -31,12 +31,29 @@ export default {
 export const Base = () => <NewUserForm submitCallTrigger={noop} />;
 ```
 
+#### MSW in Storybook
+
+Storybook can take advantage of mocked endpoints to render different states of components. We use the official [MSW.js addon](https://github.com/mswjs/msw-storybook-addon) to integrate it. This allows us to use mocked endpoints in out stories. We include the handlers used for local development in the global parameters object ([see here](./.storybook/preview.cjs')). We can also override those handlers inside specific stories:
+
+```jsx
+export const Errored = () => <Users />;
+
+Errored.parameters = {
+  msw: {
+    handlers: [
+      rest.get("/users", (_req, res, ctx) => {
+        return res(ctx.status(500));
+      }),
+    ],
+  },
+};
+```
+
 #### TODO:
 
-- [ ] MSW integration
 - [ ] visual regression testing e.g. [loki](https://loki.js.org/) or [chromatic](https://www.chromatic.com/pricing).
 
-### Pre-commit hooks
+### Git hooks
 
 Before each commit we run our **tests** to make sure commited code hasn't broken anything.
 Before pushing the code to the repo we run **typecheck** and **lint** as an aditional QA check.
