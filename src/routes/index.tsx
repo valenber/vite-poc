@@ -2,10 +2,9 @@ import { AppLayout } from "@common/components/layout/AppLayout";
 import { RoutingErrorPage } from "@common/components/layout/RoutingErrorPage";
 import { createBrowserRouter } from "react-router-dom";
 
+import { ErrorManagement } from "../features/ErrorManagement/ErrorManagement";
 import { Users } from "../features/Users";
 import { UsersListErrorBoundary } from "../features/Users/components/UsersListErrorBoundary";
-import { DataFetching } from "./DataFetching";
-import { ErrorManagement } from "./ErrorManagement";
 
 export const router = createBrowserRouter([
   {
@@ -13,10 +12,6 @@ export const router = createBrowserRouter([
     element: <AppLayout />,
     errorElement: <RoutingErrorPage />,
     children: [
-      {
-        path: "data",
-        element: <DataFetching />,
-      },
       {
         path: "errors",
         element: <ErrorManagement />,

@@ -17,7 +17,7 @@ export const RoutingErrorPage = () => {
   console.error(error);
 
   function navigateToRoot() {
-    window.location.href = "/data";
+    window.location.href = "/users";
   }
 
   return (

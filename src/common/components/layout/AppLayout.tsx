@@ -9,10 +9,6 @@ export const AppLayout = () => {
     <div className="AppLayout">
       <nav>
         <li>
-          <Link to="data">Data fetching</Link>
-        </li>
-
-        <li>
           <Link to="users">Users List</Link>
         </li>
 
