@@ -17,11 +17,15 @@ export default defineConfig({
     port: 8081,
   },
   resolve: {
-    alias: {
+    alias: { 
+      // all aliases also need to be added to complierOptions.paths of tsconfig.json
+      // so the linter does not complain
       "@api": path.resolve(__dirname, "./src/services/api"),
-      "@common": path.resolve(__dirname, "./src/common/"),
+      "@common": path.resolve(__dirname, "./src/common"),
       "@config": path.resolve(__dirname, "./config"),
-      "@tests/utils": path.resolve(__dirname, "./tests/utils.tsx"),
+      "@features": path.resolve(__dirname, "./src/features"),
+      "@mocks": path.resolve(__dirname, "./src/mocks"),
+      "@tests": path.resolve(__dirname, "./tests"),
     },
   },
 });

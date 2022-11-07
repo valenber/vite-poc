@@ -1,8 +1,8 @@
 import { config } from "@config";
+import { server } from "@mocks/server";
 import { render, screen, userEvent, waitFor} from "@tests/utils";
 import { rest } from "msw";
 
-import { server } from "../../mocks/server";
 import { Users } from ".";
 
 test("displays loading message", () => {
